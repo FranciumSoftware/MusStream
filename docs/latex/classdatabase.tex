@@ -1,0 +1,131 @@
+\doxysection{database Class Reference}
+\hypertarget{classdatabase}{}\label{classdatabase}\index{database@{database}}
+
+
+{\ttfamily \+\#include $<$database.\+h$>$}
+
+
+
+Inheritance diagram for database:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classdatabase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for database:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classdatabase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classdatabase_a604ff12a7f63b4ad1248ea2dc56221a4}{database}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+bool \doxymbox{\hyperlink{classdatabase_a8d52659489ddf0ae4a47db55d3242206}{create\+Database}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{classdatabase_a8d52659489ddf0ae4a47db55d3242206}{database::\+create\+Database}. Used to init the database \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classdatabase_a5cdd2b88d0ac2d5bb7de3a6fe8308beb}{add\+Source\+To\+Database}} (const int \&fk\+\_\+source, const QString \&name, const QString \&url, const QString \&tags, const QString \&artist=NULL, const QString \&album=NULL, const int \&year=NULL, const QString \&url\+\_\+cover=NULL, const QString \&cache\+\_\+cover=NULL, const QString \&mime\+\_\+cover=NULL, const QString \&lyrics=NULL)
+\begin{DoxyCompactList}\small\item\em \doxylink{classdatabase_a5cdd2b88d0ac2d5bb7de3a6fe8308beb}{database::\+add\+Source\+To\+Database} \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{classdatabase_a3223755ed94b2246f25075e1e5f31fff}{insert\+Source\+Infos}} (const QString \&name, const QString \&url, const int \&version, QString favicon="{}"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QSql\+Database \doxymbox{\hyperlink{classdatabase_a18bd155c93a8c3038bc7fc7291f8a103}{db}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{classdatabase_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdatabase_a604ff12a7f63b4ad1248ea2dc56221a4}\index{database@{database}!database@{database}}
+\index{database@{database}!database@{database}}
+\doxysubsubsection{\texorpdfstring{database()}{database()}}
+{\footnotesize\ttfamily \label{classdatabase_a604ff12a7f63b4ad1248ea2dc56221a4} 
+database::\+database (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classdatabase_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdatabase_a5cdd2b88d0ac2d5bb7de3a6fe8308beb}\index{database@{database}!addSourceToDatabase@{addSourceToDatabase}}
+\index{addSourceToDatabase@{addSourceToDatabase}!database@{database}}
+\doxysubsubsection{\texorpdfstring{addSourceToDatabase()}{addSourceToDatabase()}}
+{\footnotesize\ttfamily \label{classdatabase_a5cdd2b88d0ac2d5bb7de3a6fe8308beb} 
+bool database::\+add\+Source\+To\+Database (\begin{DoxyParamCaption}\item[{const int \&}]{fk\+\_\+source}{, }\item[{const QString \&}]{name}{, }\item[{const QString \&}]{url}{, }\item[{const QString \&}]{tags}{, }\item[{const QString \&}]{artistL}{ = {\ttfamily NULL}, }\item[{const QString \&}]{album}{ = {\ttfamily NULL}, }\item[{const int \&}]{year}{ = {\ttfamily NULL}, }\item[{const QString \&}]{url\+\_\+cover}{ = {\ttfamily NULL}, }\item[{const QString \&}]{cache\+\_\+cover}{ = {\ttfamily NULL}, }\item[{const QString \&}]{mime\+\_\+cover}{ = {\ttfamily NULL}, }\item[{const QString \&}]{lyrics}{ = {\ttfamily NULL}}\end{DoxyParamCaption})}
+
+
+
+\doxylink{classdatabase_a5cdd2b88d0ac2d5bb7de3a6fe8308beb}{database::\+add\+Source\+To\+Database} 
+
+This function is used to insert every titles in the database. Here are the fields:\+ 
+\begin{DoxyTable}{6}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}name  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}type  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}constraints  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Accept null  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Description  &\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}Default value  \\
+ID  &INTEGER  &\+[object Object]\+  &FALSE  &Primary key of the table  &\\
+name  &TEXT  &\+[object Object]\+  &FALSE  &Title of the song  &\\
+artist  &TEXT  &&TRUE  &Name of the artist  &\\
+album  &TEXT  &&TRUE  &Album  &\\
+year  &REAL  &\+[object Object]\+  &TRUE  &Year of creation  &0  \\
+url  &TEXT  &\+[object Object]\+  &FALSE  &URL of the music  &\\
+url\+\_\+cover  &TEXT  &&TRUE  &URL of the cover  &\\
+cache\+\_\+cover  &TEXT  &&TRUE  &Cache of the cover encoded in base64  &\\
+mime\+\_\+cover  &TEXT  &\+[object Object]\+  &TRUE  &Type mime of the cached cover  &image/\+png  \\
+lyrics  &TEXT  &&TRUE  &URL of the .lrc lyrics files  &\\
+tags  &TEXT  &\+[object Object]\+  &FALSE  &Type of music (comma separated)  &\\
+fk\+\_\+source  &INTEGER  &&TRUE  &foreing key with the SOURCES table  &\\
+score  &INTEGER  &\+[object Object]\+,\+[object Object]\+  &FALSE  &Notation for the algorythme  &0  \\
+\end{DoxyTable}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & int \&fk\+\_\+source, const QString \&name, const QString \&url, const QString \&tags, const QString \&artistL, const QString \&album, const int \&year, const QString \&url\+\_\+cover, const QString \&cache\+\_\+cover, const QString \&mime\+\_\+cover, const QString \&lyrics \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean value {\itshape True} for a success {\itshape False} for a failure 
+\end{DoxyReturn}
+\Hypertarget{classdatabase_a8d52659489ddf0ae4a47db55d3242206}\index{database@{database}!createDatabase@{createDatabase}}
+\index{createDatabase@{createDatabase}!database@{database}}
+\doxysubsubsection{\texorpdfstring{createDatabase()}{createDatabase()}}
+{\footnotesize\ttfamily \label{classdatabase_a8d52659489ddf0ae4a47db55d3242206} 
+bool database::\+create\+Database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{classdatabase_a8d52659489ddf0ae4a47db55d3242206}{database::\+create\+Database}. Used to init the database 
+
+The database is an SQLite databse. The file associated with it is {\ttfamily data.\+db} \begin{DoxyReturn}{Returns}
+bool value true -\/\texorpdfstring{$>$}{>} success, false -\/\texorpdfstring{$>$}{>} failure 
+\end{DoxyReturn}
+\Hypertarget{classdatabase_a3223755ed94b2246f25075e1e5f31fff}\index{database@{database}!insertSourceInfos@{insertSourceInfos}}
+\index{insertSourceInfos@{insertSourceInfos}!database@{database}}
+\doxysubsubsection{\texorpdfstring{insertSourceInfos()}{insertSourceInfos()}}
+{\footnotesize\ttfamily \label{classdatabase_a3223755ed94b2246f25075e1e5f31fff} 
+bool database::\+insert\+Source\+Infos (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{const QString \&}]{url}{, }\item[{const int \&}]{version}{, }\item[{QString}]{favicon}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{classdatabase_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classdatabase_a18bd155c93a8c3038bc7fc7291f8a103}\index{database@{database}!db@{db}}
+\index{db@{db}!database@{database}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \label{classdatabase_a18bd155c93a8c3038bc7fc7291f8a103} 
+QSql\+Database database::\+db\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Mus\+Stream/\+\doxymbox{\hyperlink{database_8h}{database.\+h}}\item 
+Mus\+Stream/\+\doxymbox{\hyperlink{database_8cpp}{database.\+cpp}}\end{DoxyCompactItemize}

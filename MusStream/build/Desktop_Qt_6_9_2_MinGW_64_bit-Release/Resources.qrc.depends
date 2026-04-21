@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>Assets/next.svg</file>
+        <file>Assets/pause.svg</file>
+        <file>Assets/play.svg</file>
+        <file>Assets/previous.svg</file>
+        <file>Assets/home.svg</file>
+        <file>Assets/search.svg</file>
+    </qresource>
+    <qresource prefix="/font">
+        <file>Assets/mustream.ttf</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>Assets/default_cover.png</file>
+    </qresource>
+</RCC>

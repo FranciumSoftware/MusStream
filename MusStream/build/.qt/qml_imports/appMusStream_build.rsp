@@ -1,0 +1,16 @@
+-rootPath
+C:/Users/chut/Documents/Dev/MusStream/MusStream
+-cmake-output
+-output-file
+C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/qml_imports/appMusStream_build.cmake
+-importPath
+C:/Users/chut/Documents/Dev/MusStream/MusStream/build
+-importPath
+C:/Users/chut/Documents/Dev/MusStream/MusStream/build/MusStream
+-importPath
+C:/Qt/6.11.0/mingw_64/qml
+-qrcFiles
+C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/rcc/qmake_MusStream.qrc
+C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/rcc/appMusStream_raw_qml_0.qrc
+C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/rcc/appMusStream_raw_res_0.qrc
+C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/rcc/appMusStream_raw_qml_0_extra_qmldirs.qrc

@@ -1,0 +1,207 @@
+\doxysection{Source\+Manager Class Reference}
+\hypertarget{class_source_manager}{}\label{class_source_manager}\index{SourceManager@{SourceManager}}
+
+
+{\ttfamily \+\#include $<$sourcemanager.\+h$>$}
+
+
+
+Inheritance diagram for Source\+Manager:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_source_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Source\+Manager:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_source_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_source_manager_a35eaf7f5b91207ee4de44fa5bbdd8d09}{data\+Received}} (const QString \&data)
+\item 
+void \doxymbox{\hyperlink{class_source_manager_a44f0e978df98e50e7366e95006ed2360}{ready}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_source_manager_a1eaa5a403435136770a3cbf27af8bc8a}{Source\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \doxymbox{\hyperlink{class_source_manager_a737455f5e72a44fdadcdf1026ac2ff1a}{get\+Source\+Data}} (const QString \&url)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_source_manager_a737455f5e72a44fdadcdf1026ac2ff1a}{Source\+Manager::\+get\+Source\+Data}. \end{DoxyCompactList}\item 
+QJson\+Array \doxymbox{\hyperlink{class_source_manager_a647f8578b8e0520261cca51f990338c3}{parse\+Json}} (const QString \&data)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_source_manager_a647f8578b8e0520261cca51f990338c3}{Source\+Manager::\+parse\+Json}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_source_manager_a07510ab5d28c5040d016753282c87bc4}{add\+Source}} (const QString \&url)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_source_manager_a07510ab5d28c5040d016753282c87bc4}{Source\+Manager::\+add\+Source}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_source_manager_ad3f32aca8e1f72bec4694de413a3d848}{add\+To\+Database}} (const QJson\+Array \&data)
+\item 
+QJson\+Array \doxymbox{\hyperlink{class_source_manager_ad9269c111326e6314faecf68d3b28dbc}{get\+Musics\+Data}} () const
+\item 
+void \doxymbox{\hyperlink{class_source_manager_aac2bc67141e0ac94bfa913084a0de1b3}{get\+Sources\+Info}} (const QString \&json)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QNetwork\+Access\+Manager \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_source_manager_a4c9f3064ff6fec56d1243942bda27f21}{manager}}
+\item 
+QJson\+Array \doxymbox{\hyperlink{class_source_manager_abccf6e9ffdd8d21e36e64c763e786e6a}{m\+\_\+music\+Data}}
+\item 
+QString \doxymbox{\hyperlink{class_source_manager_ad4e41f63c4c6d3c6523a4edb6f5fb366}{source\+\_\+name}}
+\item 
+QString \doxymbox{\hyperlink{class_source_manager_a635c51e9873884074a653b2d6e7c98dd}{source\+\_\+url}}
+\item 
+int \doxymbox{\hyperlink{class_source_manager_a77477ed5ab818699f8ea9789f4e67f15}{version}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_source_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_source_manager_a1eaa5a403435136770a3cbf27af8bc8a}\index{SourceManager@{SourceManager}!SourceManager@{SourceManager}}
+\index{SourceManager@{SourceManager}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{SourceManager()}{SourceManager()}}
+{\footnotesize\ttfamily \label{class_source_manager_a1eaa5a403435136770a3cbf27af8bc8a} 
+Source\+Manager::\+\+Source\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_source_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_source_manager_a07510ab5d28c5040d016753282c87bc4}\index{SourceManager@{SourceManager}!addSource@{addSource}}
+\index{addSource@{addSource}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{addSource()}{addSource()}}
+{\footnotesize\ttfamily \label{class_source_manager_a07510ab5d28c5040d016753282c87bc4} 
+bool Source\+Manager::\+add\+Source (\begin{DoxyParamCaption}\item[{const QString \&}]{url}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_source_manager_a07510ab5d28c5040d016753282c87bc4}{Source\+Manager::\+add\+Source}. 
+
+Call every necessary functions to add a source 
+\begin{DoxyParams}{Parameters}
+{\em QString} & url \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}&\SetCell{c,bg=\tableheadbgcolor,font=\bfseries}\\
+True  &Success  \\
+False  &Failure  \\
+\end{DoxyTable}
+
+\end{DoxyReturn}
+\Hypertarget{class_source_manager_ad3f32aca8e1f72bec4694de413a3d848}\index{SourceManager@{SourceManager}!addToDatabase@{addToDatabase}}
+\index{addToDatabase@{addToDatabase}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{addToDatabase()}{addToDatabase()}}
+{\footnotesize\ttfamily \label{class_source_manager_ad3f32aca8e1f72bec4694de413a3d848} 
+bool Source\+Manager::\+add\+To\+Database (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{data}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_source_manager_a35eaf7f5b91207ee4de44fa5bbdd8d09}\index{SourceManager@{SourceManager}!dataReceived@{dataReceived}}
+\index{dataReceived@{dataReceived}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{dataReceived}{dataReceived}}
+{\footnotesize\ttfamily \label{class_source_manager_a35eaf7f5b91207ee4de44fa5bbdd8d09} 
+void Source\+Manager::\+data\+Received (\begin{DoxyParamCaption}\item[{const QString \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_source_manager_ad9269c111326e6314faecf68d3b28dbc}\index{SourceManager@{SourceManager}!getMusicsData@{getMusicsData}}
+\index{getMusicsData@{getMusicsData}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{getMusicsData()}{getMusicsData()}}
+{\footnotesize\ttfamily \label{class_source_manager_ad9269c111326e6314faecf68d3b28dbc} 
+QJson\+Array Source\+Manager::\+get\+Musics\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_source_manager_a737455f5e72a44fdadcdf1026ac2ff1a}\index{SourceManager@{SourceManager}!getSourceData@{getSourceData}}
+\index{getSourceData@{getSourceData}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{getSourceData()}{getSourceData()}}
+{\footnotesize\ttfamily \label{class_source_manager_a737455f5e72a44fdadcdf1026ac2ff1a} 
+void Source\+Manager::\+get\+Source\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{url}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_source_manager_a737455f5e72a44fdadcdf1026ac2ff1a}{Source\+Manager::\+get\+Source\+Data}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em QString} & {\ttfamily url} the url of the source. It must be in JSON format. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_source_manager_aac2bc67141e0ac94bfa913084a0de1b3}\index{SourceManager@{SourceManager}!getSourcesInfo@{getSourcesInfo}}
+\index{getSourcesInfo@{getSourcesInfo}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{getSourcesInfo()}{getSourcesInfo()}}
+{\footnotesize\ttfamily \label{class_source_manager_aac2bc67141e0ac94bfa913084a0de1b3} 
+void Source\+Manager::\+get\+Sources\+Info (\begin{DoxyParamCaption}\item[{const QString \&}]{json}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_source_manager_a647f8578b8e0520261cca51f990338c3}\index{SourceManager@{SourceManager}!parseJson@{parseJson}}
+\index{parseJson@{parseJson}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{parseJson()}{parseJson()}}
+{\footnotesize\ttfamily \label{class_source_manager_a647f8578b8e0520261cca51f990338c3} 
+QJson\+Array Source\+Manager::\+parse\+Json (\begin{DoxyParamCaption}\item[{const QString \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_source_manager_a647f8578b8e0520261cca51f990338c3}{Source\+Manager::\+parse\+Json}. 
+
+Extract the {\ttfamily  musics } JSON array from the response. 
+\begin{DoxyParams}{Parameters}
+{\em \`{}} & QString data \`{} the JSON downloaded previuosly by get\+Source\+Data void function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+QJson\+Array 
+\end{DoxyReturn}
+\Hypertarget{class_source_manager_a44f0e978df98e50e7366e95006ed2360}\index{SourceManager@{SourceManager}!ready@{ready}}
+\index{ready@{ready}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{ready}{ready}}
+{\footnotesize\ttfamily \label{class_source_manager_a44f0e978df98e50e7366e95006ed2360} 
+void Source\+Manager::\+ready (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_source_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_source_manager_abccf6e9ffdd8d21e36e64c763e786e6a}\index{SourceManager@{SourceManager}!m\_musicData@{m\_musicData}}
+\index{m\_musicData@{m\_musicData}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{m\_musicData}{m\_musicData}}
+{\footnotesize\ttfamily \label{class_source_manager_abccf6e9ffdd8d21e36e64c763e786e6a} 
+QJson\+Array Source\+Manager::\+m\+\_\+music\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_source_manager_a4c9f3064ff6fec56d1243942bda27f21}\index{SourceManager@{SourceManager}!manager@{manager}}
+\index{manager@{manager}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily \label{class_source_manager_a4c9f3064ff6fec56d1243942bda27f21} 
+QNetwork\+Access\+Manager\texorpdfstring{$\ast$}{*} Source\+Manager::\+manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_source_manager_ad4e41f63c4c6d3c6523a4edb6f5fb366}\index{SourceManager@{SourceManager}!source\_name@{source\_name}}
+\index{source\_name@{source\_name}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{source\_name}{source\_name}}
+{\footnotesize\ttfamily \label{class_source_manager_ad4e41f63c4c6d3c6523a4edb6f5fb366} 
+QString Source\+Manager::\+source\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_source_manager_a635c51e9873884074a653b2d6e7c98dd}\index{SourceManager@{SourceManager}!source\_url@{source\_url}}
+\index{source\_url@{source\_url}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{source\_url}{source\_url}}
+{\footnotesize\ttfamily \label{class_source_manager_a635c51e9873884074a653b2d6e7c98dd} 
+QString Source\+Manager::\+source\+\_\+url\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_source_manager_a77477ed5ab818699f8ea9789f4e67f15}\index{SourceManager@{SourceManager}!version@{version}}
+\index{version@{version}!SourceManager@{SourceManager}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily \label{class_source_manager_a77477ed5ab818699f8ea9789f4e67f15} 
+int Source\+Manager::\+version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Mus\+Stream/\+\doxymbox{\hyperlink{sourcemanager_8h}{sourcemanager.\+h}}\item 
+Mus\+Stream/\+\doxymbox{\hyperlink{sourcemanager_8cpp}{sourcemanager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/qt/qml/MusStream/">
+    <file alias="Main.qml">C:/Users/chut/Documents/Dev/MusStream/MusStream/Main.qml</file>
+    <file alias="Home.qml">C:/Users/chut/Documents/Dev/MusStream/MusStream/Home.qml</file>
+    <file alias="Resources.qrc">C:/Users/chut/Documents/Dev/MusStream/MusStream/Resources.qrc</file>
+  </qresource>
+</RCC>
+

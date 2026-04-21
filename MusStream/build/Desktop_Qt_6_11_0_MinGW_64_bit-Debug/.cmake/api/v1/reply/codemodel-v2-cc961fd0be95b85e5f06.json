@@ -1,0 +1,223 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-6ecf090bcdf501c115f1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MusStream",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-75a1bcb28c12599e42b0.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-fca99d3b0c780fe8dbd2.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-a5404afb1e76218d2c7e.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-b1d5a92c9e9da6cf4eeb.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-e2faa18a880ebe261709.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream-Debug-1840ba73dbab3db83f9b.json",
+					"name" : "appMusStream",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_autogen-Debug-11216dbf028fda58adfe.json",
+					"name" : "appMusStream_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_autogen_timestamp_deps-Debug-db86e33affee4e292c70.json",
+					"name" : "appMusStream_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_copy_qml-Debug-fdf5eb362aa3aedc5ff7.json",
+					"name" : "appMusStream_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_copy_res-Debug-b02ca935c2ef3929ff9e.json",
+					"name" : "appMusStream_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_qmlimportscan-Debug-f504a5160635c47490a3.json",
+					"name" : "appMusStream_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_qmllint-Debug-e6e459771c812795f64f.json",
+					"name" : "appMusStream_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_qmllint_json-Debug-e6f36dca3cdcc8188610.json",
+					"name" : "appMusStream_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_qmllint_module-Debug-8a44da610821a0029ecd.json",
+					"name" : "appMusStream_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appMusStream_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appMusStream_qmltyperegistration-Debug-4e0a4025435e815c9657.json",
+					"name" : "appMusStream_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_qml_context_properties::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_qml_context_properties-Debug-c549c9d25193d907838c.json",
+					"name" : "clean_qml_context_properties",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dump_qml_context_properties::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dump_qml_context_properties-Debug-3d53ae8505903ba819be.json",
+					"name" : "dump_qml_context_properties",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_qmlls_build_ini_file-Debug-dcda1775b1618706fc50.json",
+					"name" : "generate_qmlls_build_ini_file",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appMusStream_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appMusStream_aotstats_target-Debug-ec71cf3abd79746135a0.json",
+					"name" : "module_appMusStream_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/chut/Documents/Dev/MusStream/MusStream/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/chut/Documents/Dev/MusStream/MusStream"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

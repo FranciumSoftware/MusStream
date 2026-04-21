@@ -1,0 +1,5 @@
+<map id="backEnd" name="backEnd">
+<area shape="rect" id="Node000001" title="Link between the backend and the front end." alt="" coords="5,123,136,235"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="42,5,100,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,87,73,123,68,122,70,92"/>
+</map>

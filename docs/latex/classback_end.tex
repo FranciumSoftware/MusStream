@@ -1,0 +1,118 @@
+\doxysection{back\+End Class Reference}
+\hypertarget{classback_end}{}\label{classback_end}\index{backEnd@{backEnd}}
+
+
+Link between the backend and the front end.  
+
+
+
+
+{\ttfamily \+\#include $<$backend.\+h$>$}
+
+
+
+Inheritance diagram for back\+End:\+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classback_end__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for back\+End:\+
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{classback_end__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{classback_end_a95c3fe03e7ea9b1cc4ae5bb46fc74ba8}{back\+End}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+Q\+\_\+\+INVOKABLE int \doxymbox{\hyperlink{classback_end_a2f1a7451b60ebc1a198f8b8fca602d9a}{init}} ()
+\begin{DoxyCompactList}\small\item\em Call every neccessary functions at the launch of the app. \end{DoxyCompactList}\item 
+Q\+\_\+\+INVOKABLE bool \doxymbox{\hyperlink{classback_end_a99adde9947a9c353113285888ec3ed09}{add\+Source}} (QString url)
+\begin{DoxyCompactList}\small\item\em Function called if the Add\+Source button is checked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_source_manager}{Source\+Manager}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{classback_end_a1b764c4c8feda2b85452ab505d9b5dd8}{m\+\_\+source\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Link between the backend and the front end. 
+
+Every functions you want to link with the user interface must be called in this class. 
+
+\label{doc-constructors}
+\Hypertarget{classback_end_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classback_end_a95c3fe03e7ea9b1cc4ae5bb46fc74ba8}\index{backEnd@{backEnd}!backEnd@{backEnd}}
+\index{backEnd@{backEnd}!backEnd@{backEnd}}
+\doxysubsubsection{\texorpdfstring{backEnd()}{backEnd()}}
+{\footnotesize\ttfamily \label{classback_end_a95c3fe03e7ea9b1cc4ae5bb46fc74ba8} 
+back\+End::\+back\+End (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{classback_end_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classback_end_a99adde9947a9c353113285888ec3ed09}\index{backEnd@{backEnd}!addSource@{addSource}}
+\index{addSource@{addSource}!backEnd@{backEnd}}
+\doxysubsubsection{\texorpdfstring{addSource()}{addSource()}}
+{\footnotesize\ttfamily \label{classback_end_a99adde9947a9c353113285888ec3ed09} 
+bool back\+End::\+add\+Source (\begin{DoxyParamCaption}\item[{QString}]{url}{}\end{DoxyParamCaption})}
+
+
+
+Function called if the Add\+Source button is checked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em QString} & URL (the url of the source) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool if success -\/\texorpdfstring{$>$}{>} true else -\/\texorpdfstring{$>$}{>} false 
+\end{DoxyReturn}
+\Hypertarget{classback_end_a2f1a7451b60ebc1a198f8b8fca602d9a}\index{backEnd@{backEnd}!init@{init}}
+\index{init@{init}!backEnd@{backEnd}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{classback_end_a2f1a7451b60ebc1a198f8b8fca602d9a} 
+int back\+End::\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Call every neccessary functions at the launch of the app. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em No} & params needed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the result:\+ 0 -\/\texorpdfstring{$>$}{>} Success 1 -\/\texorpdfstring{$>$}{>} Database initialisation error 
+\end{DoxyReturn}
+
+
+\label{doc-variable-members}
+\Hypertarget{classback_end_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classback_end_a1b764c4c8feda2b85452ab505d9b5dd8}\index{backEnd@{backEnd}!m\_sourceManager@{m\_sourceManager}}
+\index{m\_sourceManager@{m\_sourceManager}!backEnd@{backEnd}}
+\doxysubsubsection{\texorpdfstring{m\_sourceManager}{m\_sourceManager}}
+{\footnotesize\ttfamily \label{classback_end_a1b764c4c8feda2b85452ab505d9b5dd8} 
+\doxymbox{\hyperlink{class_source_manager}{Source\+Manager}}\texorpdfstring{$\ast$}{*} back\+End::\+m\+\_\+source\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Mus\+Stream/\+\doxymbox{\hyperlink{backend_8h}{backend.\+h}}\item 
+Mus\+Stream/\+\doxymbox{\hyperlink{backend_8cpp}{backend.\+cpp}}\end{DoxyCompactItemize}

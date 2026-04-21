@@ -1,0 +1,240 @@
+{
+	"abstract" : true,
+	"artifacts" : 
+	[
+		{
+			"path" : "C:/Qt/6.11.0/mingw_64/bin/Qt6TaskTree.dll"
+		},
+		{
+			"path" : "C:/Qt/6.11.0/mingw_64/lib/libQt6TaskTree.a"
+		}
+	],
+	"backtrace" : 26,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include",
+			"find_package",
+			"__find_dependency_common",
+			"find_dependency",
+			"_qt_internal_find_qt_dependencies",
+			"__qt_internal_include_qml_plugin_packages",
+			"set_target_properties"
+		],
+		"files" : 
+		[
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6TaskTree/Qt6TaskTreeTargets.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6TaskTree/Qt6TaskTreeConfig.cmake",
+			"C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeFindDependencyMacro.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateDependencies.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6QmlAssetDownloaderPrivate/Qt6QmlAssetDownloaderPrivateConfig.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderPrivatepluginDependencies.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlAssetDownloaderPrivatepluginConfig.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlPlugins.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake",
+			"C:/Qt/6.11.0/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 12
+			},
+			{
+				"command" : 2,
+				"file" : 12,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"file" : 11,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 11,
+				"line" : 246,
+				"parent" : 2
+			},
+			{
+				"file" : 10,
+				"parent" : 3
+			},
+			{
+				"command" : 1,
+				"file" : 10,
+				"line" : 199,
+				"parent" : 4
+			},
+			{
+				"file" : 9,
+				"parent" : 5
+			},
+			{
+				"command" : 6,
+				"file" : 9,
+				"line" : 6,
+				"parent" : 6
+			},
+			{
+				"command" : 1,
+				"file" : 8,
+				"line" : 638,
+				"parent" : 7
+			},
+			{
+				"file" : 7,
+				"parent" : 8
+			},
+			{
+				"command" : 1,
+				"file" : 7,
+				"line" : 40,
+				"parent" : 9
+			},
+			{
+				"file" : 6,
+				"parent" : 10
+			},
+			{
+				"command" : 5,
+				"file" : 6,
+				"line" : 22,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 142,
+				"parent" : 12
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 125,
+				"parent" : 13
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 93,
+				"parent" : 14
+			},
+			{
+				"file" : 5,
+				"parent" : 15
+			},
+			{
+				"command" : 1,
+				"file" : 5,
+				"line" : 40,
+				"parent" : 16
+			},
+			{
+				"file" : 4,
+				"parent" : 17
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 50,
+				"parent" : 18
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 142,
+				"parent" : 19
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 125,
+				"parent" : 20
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 93,
+				"parent" : 21
+			},
+			{
+				"file" : 1,
+				"parent" : 22
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 55,
+				"parent" : 23
+			},
+			{
+				"file" : 0,
+				"parent" : 24
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 59,
+				"parent" : 25
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 61,
+				"parent" : 25
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "Qt6::TaskTree::@6890427a1f51a3e7e1df",
+	"imported" : true,
+	"interfaceCompileDependencies" : 
+	[
+		{
+			"backtrace" : 27,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 27,
+			"id" : "Qt6::Concurrent::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 27,
+			"id" : "Qt6::Network::@6890427a1f51a3e7e1df"
+		}
+	],
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 27,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 27,
+			"id" : "Qt6::Concurrent::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 27,
+			"id" : "Qt6::Network::@6890427a1f51a3e7e1df"
+		}
+	],
+	"local" : true,
+	"name" : "Qt6::TaskTree",
+	"nameOnDisk" : "Qt6TaskTree.dll",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "SHARED_LIBRARY"
+}

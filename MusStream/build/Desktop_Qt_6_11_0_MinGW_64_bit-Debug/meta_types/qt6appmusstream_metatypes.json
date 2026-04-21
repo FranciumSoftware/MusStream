@@ -1,0 +1,223 @@
+[
+    {
+        "classes": [
+            {
+                "className": "backEnd",
+                "lineNumber": 13,
+                "methods": [
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "lineNumber": 19,
+                        "name": "init",
+                        "returnType": "int"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "url",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 4,
+                        "lineNumber": 20,
+                        "name": "addSource",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "lineNumber": 21,
+                        "name": "getSources",
+                        "returnType": "QList<QMap<QString,QVariant>>"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "id",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 6,
+                        "lineNumber": 22,
+                        "name": "deleteSource",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "search",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 7,
+                        "lineNumber": 23,
+                        "name": "searchMusic",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "name",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "artist",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "cover",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 8,
+                        "lineNumber": 24,
+                        "name": "setInfosTo",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 9,
+                        "lineNumber": 25,
+                        "name": "getName",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "index": 10,
+                        "lineNumber": 26,
+                        "name": "getArtist",
+                        "returnType": "QString"
+                    },
+                    {
+                        "access": "public",
+                        "index": 11,
+                        "lineNumber": 27,
+                        "name": "getCover",
+                        "returnType": "QString"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "lineNumber": 16,
+                        "name": "searchResults",
+                        "notify": "searchResultsChanged",
+                        "override": false,
+                        "read": "getSearchResults",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false,
+                        "virtual": false
+                    }
+                ],
+                "qualifiedClassName": "backEnd",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 39,
+                        "name": "sourceAddedSuccess",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "message",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 1,
+                        "lineNumber": 40,
+                        "name": "sourceAddedError",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 2,
+                        "lineNumber": 41,
+                        "name": "searchResultsChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "backend.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "database",
+                "lineNumber": 12,
+                "object": true,
+                "qualifiedClassName": "database",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "database.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "SourceManager",
+                "lineNumber": 12,
+                "object": true,
+                "qualifiedClassName": "SourceManager",
+                "signals": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "data",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 0,
+                        "lineNumber": 32,
+                        "name": "dataReceived",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "lineNumber": 33,
+                        "name": "ready",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "sourcemanager.h",
+        "outputRevision": 69
+    }
+]

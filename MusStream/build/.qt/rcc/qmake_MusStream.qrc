@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/MusStream">
+    <file alias="qmldir">C:/Users/chut/Documents/Dev/MusStream/MusStream/build/MusStream/qmldir</file>
+  </qresource>
+</RCC>
+

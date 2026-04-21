@@ -1,0 +1,28 @@
+[
+    {
+        "classes": [
+            {
+                "className": "database",
+                "lineNumber": 7,
+                "methods": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "name": "createDatabase",
+                        "returnType": "bool"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "database",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "database.h",
+        "outputRevision": 69
+    }
+]

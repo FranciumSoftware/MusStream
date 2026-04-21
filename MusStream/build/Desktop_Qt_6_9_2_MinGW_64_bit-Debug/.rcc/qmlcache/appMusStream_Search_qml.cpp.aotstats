@@ -1,0 +1,20 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 385,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 8
+                    }
+                ],
+                "filePath": "C:/Users/chut/Documents/Dev/MusStream/MusStream/Search.qml"
+            }
+        ],
+        "moduleId": "MusStream(appMusStream)"
+    }
+]

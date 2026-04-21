@@ -1,0 +1,14 @@
+# ninja log v6
+188	903	7971797371751552	.qt/qmlls.ini.build	ba765493430b28c8
+188	903	7971797371751552	C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/qmlls.ini.build	ba765493430b28c8
+905	1096	7971797373492735	.qt/appMusStream_qml.txt	86cd1c7e3abb96c9
+905	1096	7971797373492735	C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/appMusStream_qml.txt	86cd1c7e3abb96c9
+1247	1608	7971797378762056	C:/Users/chut/Documents/Dev/MusStream/MusStream/.qmlls.ini	db0b249a1b9b2f66
+1097	1246	7971797375089781	.qt/appMusStream_res.txt	5629420fd15729bc
+1097	1246	7971797375089781	C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/appMusStream_res.txt	5629420fd15729bc
+1247	1608	7971797378762056	.qt/qmlls.ini.timestamp	db0b249a1b9b2f66
+1247	1608	7971797378762056	C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/qmlls.ini.timestamp	db0b249a1b9b2f66
+1609	2076	7971797383431989	.qt/.qmlls.build.ini	711ba43e7d3d9715
+1609	2076	7971797383431989	C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/.qmlls.build.ini	711ba43e7d3d9715
+2076	14657	7971797509195212	.qt/qml_imports/appMusStream_build.cmake	345bc7be7b55c992
+2076	14657	7971797509195212	C:/Users/chut/Documents/Dev/MusStream/MusStream/build/.qt/qml_imports/appMusStream_build.cmake	345bc7be7b55c992
