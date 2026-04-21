@@ -1,7 +1,0 @@
-module MusStream
-typeinfo appMusStream.qmltypes
-prefer :/qt/qml/MusStream/
-Main 254.0 Main.qml
-Home 254.0 Home.qml
-depends QtQuick
-
