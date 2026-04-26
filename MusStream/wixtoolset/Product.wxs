@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package Name="MusStream" Language="1033" Version="0.1.0" Manufacturer="Your Company" UpgradeCode="{12345678-1234-1234-1234-123456789ABC}">
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <StandardDirectory Id="ProgramFilesFolder">
+      <Directory Id="INSTALLFOLDER" Name="MusStream" />
+    </StandardDirectory>
+
+    <Feature Id="ProductFeature" Title="MusStream" Level="1">
+      <ComponentGroupRef Id="MyFiles" />
+    </Feature>
+  </Package>
+
+  <?include Fragment.wxs ?>
+</Wix>

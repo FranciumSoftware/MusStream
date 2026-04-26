@@ -6,7 +6,9 @@ import QtQuick.Dialogs
 
 Page {
     id: root
-
+    background: Rectangle {
+        color: "#dddddd"
+    }
     // Déclarez une propriété pour les résultats de recherche
     property var searchResults: []
 
@@ -33,18 +35,35 @@ Page {
             TextField {
                 id: searchBox
                 Layout.fillWidth: true
+                color: "black"
+                placeholderTextColor: "#aaaaaa"
                 placeholderText: qsTr("Search music by title")
+                background: Rectangle {
+                    implicitWidth: 200
+                    implicitHeight: 40
+                    color: searchBox.enabled ? "#ededed" : "#353637"
+                    radius: 7
+                }
             }
 
             Button {
                 id: searchButton
                 text: qsTr("Search")
+                palette {
+                    buttonText: "black"
+                    brightText: "black"
+                    highlight: "black"
+                    windowText: "white"
+
+                }
+
                 flat: true
                 background: Rectangle {
                     implicitWidth: 100
                     implicitHeight: 40
                     opacity: enabled ? 1 : 0.3
-                    color: searchButton.down ? "#16db0b" : "#b8f909"
+                    color: searchButton.down ? "#17d10a" : "#05a12d"
+                    radius: 7
                 }
                 onClicked: {
                     cppManager.searchMusic(searchBox.text);

@@ -1,5 +1,5 @@
 import QtQuick
-import QtQuick.Controls
+import QtQuick.Controls.Basic
 import QtQuick.Layouts
 import QtMultimedia
 import QtQuick.Dialogs
@@ -10,6 +10,9 @@ ApplicationWindow {
     width: 900
     height: 600
     title: "MusStream"
+    background: Rectangle {
+        color: "#dedede"
+    }
 
     signal changeMediaSource(string source)
     Component.onCompleted: {
@@ -48,7 +51,7 @@ ApplicationWindow {
     }
     header: ToolBar {
         background: Rectangle {
-            color: "#05a12d" // Couleur de fond de la barre
+            color: "#ededed" // Couleur de fond de la barre
             implicitHeight: 50
         }
         RowLayout {
@@ -73,23 +76,33 @@ ApplicationWindow {
                 Text {
                     id: title
                     text: "Titre"
-                    color: "white"
+                    color: "black"
                 }
                 Text {
                     id: artist
                     text: "Artiste"
-                    color: "white"
+                    color: "black"
                 }
             }
 
             Button {
                 icon.source: globalMediaPlayer.playbackState === MediaPlayer.PlayingState ? "qrc:/icons/Assets/pause.svg" : "qrc:/icons/Assets/play.svg"
+                icon.color: "black"
                 onClicked: {
                     if (globalMediaPlayer.playbackState === MediaPlayer.PlayingState) {
                         globalMediaPlayer.pause();
                     } else {
                         globalMediaPlayer.play();
                     }
+                }
+                background: Rectangle {
+                    color: "transparent"
+                }
+                palette: {
+                    buttonText: "black"
+                    brightText: "black"
+                    highlight: "black"
+                    windowText: "black"
                 }
             }
 
@@ -107,6 +120,32 @@ ApplicationWindow {
                         globalMediaPlayer.position = timeMusic.value;
                     }
                 }
+                background: Rectangle {
+                    x: timeMusic.leftPadding
+                            y: timeMusic.topPadding + timeMusic.availableHeight / 2 - height / 2
+                            implicitWidth: 200
+                            implicitHeight: 4
+                            width: timeMusic.availableWidth
+                            height: implicitHeight
+                            radius: 2
+                            color: "#bdbebf"
+
+                            Rectangle {
+                                width: timeMusic.visualPosition * parent.width
+                                height: parent.height
+                                color: "#21be2b"
+                                radius: 2
+                            }
+                    }
+                handle: Rectangle {
+                    x: timeMusic.leftPadding + timeMusic.visualPosition * (timeMusic.availableWidth - width)
+                            y: timeMusic.topPadding + timeMusic.availableHeight / 2 - height / 2
+                            implicitWidth: 13
+                            implicitHeight: 13
+                            radius: 6.5
+                            color: timeMusic.pressed ? "#f0f0f0" : "#f6f6f6"
+                            border.color: "#bdbebf"
+                    }
             }
         }
     }
@@ -123,7 +162,7 @@ ApplicationWindow {
             Layout.fillHeight: true
 
             // Animation fluide de la largeur
-            Layout.preferredWidth: isMenuOpen ? 200 : 60
+            Layout.preferredWidth: isMenuOpen ? 200 : 70
             Behavior on Layout.preferredWidth {
                 NumberAnimation {
                     duration: 250
@@ -131,7 +170,7 @@ ApplicationWindow {
                 }
             }
 
-            color: "#05a12d"
+            color: "#ededed"
 
             ColumnLayout {
                 anchors.fill: parent
@@ -139,15 +178,19 @@ ApplicationWindow {
 
                 // Bouton de bascule (Burger / Arrow)
                 Button {
-                    text: isMenuOpen ? "<font color='#fefefe'>" + "\ue81d" + "</font>" : "<font color='#fefefe'>\uf0c9</font>"
+                    id: menuButton
+                    text: isMenuOpen ? "<font color='#010101'>\ue81d</font>" : "<font color='#010101'>\uf0c9</font>"
                     font.family: iconFont.name
                     flat: true
                     display: AbstractButton.TextOnly
                     font.pixelSize: 20
-                    palette.buttonText: "#ff00ff"
+                    palette.buttonText: "#000000"
                     Layout.alignment: Qt.AlignLeft
                     Layout.leftMargin: 20
                     onClicked: isMenuOpen = !isMenuOpen
+                    background: Rectangle {
+                        color: "transparent"
+                    }
                 }
 
                 ListView {
@@ -185,13 +228,13 @@ ApplicationWindow {
                                 text: model.iconCode // Ex: "\uf015"
                                 font.family: iconFont.name // On utilise le nom chargé
                                 font.pixelSize: 20
-                                color: parent.down ? "#1abc9c" : "white"
+                                color: parent.down ? "#black" : "black"
                                 horizontalAlignment: Text.AlignHCenter
                                 Layout.preferredWidth: 50
                             }
                             Text {
                                 text: model.name
-                                color: "white"
+                                color: "black"
                                 font.pixelSize: 14
                                 Layout.fillWidth: true
                                 // On cache le texte si le menu est fermé
@@ -205,7 +248,7 @@ ApplicationWindow {
                         }
 
                         background: Rectangle {
-                            color: parent.hovered ? "#07a631" : "transparent"
+                            color: parent.hovered ? "#dddddd" : "transparent"
                         }
 
                         onClicked: stackView.replace(model.page)

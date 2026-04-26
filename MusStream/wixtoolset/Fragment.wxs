@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Include xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Fragment>
+    <ComponentGroup Id="MyFiles">
+      <Component Guid="*"><File Id="File_appMusStream_exe" Source="..\build\out\appMusStream.exe" /></Component>
+      <Component Guid="*"><File Id="File_avcodec_61_dll" Source="..\build\out\avcodec-61.dll" /></Component>
+      <Component Guid="*"><File Id="File_avformat_61_dll" Source="..\build\out\avformat-61.dll" /></Component>
+      <Component Guid="*"><File Id="File_avutil_59_dll" Source="..\build\out\avutil-59.dll" /></Component>
+      <Component Guid="*"><File Id="File_D3Dcompiler_47_dll" Source="..\build\out\D3Dcompiler_47.dll" /></Component>
+      <Component Guid="*"><File Id="File_libgcc_s_seh_1_dll" Source="..\build\out\libgcc_s_seh-1.dll" /></Component>
+      <Component Guid="*"><File Id="File_libstdc___6_dll" Source="..\build\out\libstdc++-6.dll" /></Component>
+      <Component Guid="*"><File Id="File_libwinpthread_1_dll" Source="..\build\out\libwinpthread-1.dll" /></Component>
+      <Component Guid="*"><File Id="File_opengl32sw_dll" Source="..\build\out\opengl32sw.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Core_dll" Source="..\build\out\Qt6Core.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Gui_dll" Source="..\build\out\Qt6Gui.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Lottie_dll" Source="..\build\out\Qt6Lottie.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6LottieVectorImageGenerator_dll" Source="..\build\out\Qt6LottieVectorImageGenerator.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Multimedia_dll" Source="..\build\out\Qt6Multimedia.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Network_dll" Source="..\build\out\Qt6Network.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6OpenGL_dll" Source="..\build\out\Qt6OpenGL.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Qml_dll" Source="..\build\out\Qt6Qml.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6QmlMeta_dll" Source="..\build\out\Qt6QmlMeta.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6QmlModels_dll" Source="..\build\out\Qt6QmlModels.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6QmlWorkerScript_dll" Source="..\build\out\Qt6QmlWorkerScript.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Quick_dll" Source="..\build\out\Qt6Quick.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Quick3DUtils_dll" Source="..\build\out\Qt6Quick3DUtils.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6QuickVectorImageGenerator_dll" Source="..\build\out\Qt6QuickVectorImageGenerator.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Sql_dll" Source="..\build\out\Qt6Sql.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6Svg_dll" Source="..\build\out\Qt6Svg.dll" /></Component>
+      <Component Guid="*"><File Id="File_Qt6VirtualKeyboard_dll" Source="..\build\out\Qt6VirtualKeyboard.dll" /></Component>
+      <Component Guid="*"><File Id="File_swresample_5_dll" Source="..\build\out\swresample-5.dll" /></Component>
+      <Component Guid="*"><File Id="File_swscale_8_dll" Source="..\build\out\swscale-8.dll" /></Component>
+      <Component Guid="*"><File Id="File_generic_qtuiotouchplugin_dll" Source="..\build\out\generic/qtuiotouchplugin.dll" /></Component>
+      <Component Guid="*"><File Id="File_iconengines_qsvgicon_dll" Source="..\build\out\iconengines/qsvgicon.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qgif_dll" Source="..\build\out\imageformats/qgif.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qicns_dll" Source="..\build\out\imageformats/qicns.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qico_dll" Source="..\build\out\imageformats/qico.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qjpeg_dll" Source="..\build\out\imageformats/qjpeg.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qsvg_dll" Source="..\build\out\imageformats/qsvg.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qtga_dll" Source="..\build\out\imageformats/qtga.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qtiff_dll" Source="..\build\out\imageformats/qtiff.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qwbmp_dll" Source="..\build\out\imageformats/qwbmp.dll" /></Component>
+      <Component Guid="*"><File Id="File_imageformats_qwebp_dll" Source="..\build\out\imageformats/qwebp.dll" /></Component>
+      <Component Guid="*"><File Id="File_multimedia_ffmpegmediaplugin_dll" Source="..\build\out\multimedia/ffmpegmediaplugin.dll" /></Component>
+      <Component Guid="*"><File Id="File_multimedia_windowsmediaplugin_dll" Source="..\build\out\multimedia/windowsmediaplugin.dll" /></Component>
+      <Component Guid="*"><File Id="File_networkinformation_qnetworklistmanager_dll" Source="..\build\out\networkinformation/qnetworklistmanager.dll" /></Component>
+      <Component Guid="*"><File Id="File_platforminputcontexts_qtvirtualkeyboardplugin_dll" Source="..\build\out\platforminputcontexts/qtvirtualkeyboardplugin.dll" /></Component>
+      <Component Guid="*"><File Id="File_platforms_qwindows_dll" Source="..\build\out\platforms/qwindows.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_debugger_dll" Source="..\build\out\qmltooling/qmldbg_debugger.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_inspector_dll" Source="..\build\out\qmltooling/qmldbg_inspector.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_local_dll" Source="..\build\out\qmltooling/qmldbg_local.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_messages_dll" Source="..\build\out\qmltooling/qmldbg_messages.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_native_dll" Source="..\build\out\qmltooling/qmldbg_native.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_nativedebugger_dll" Source="..\build\out\qmltooling/qmldbg_nativedebugger.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_preview_dll" Source="..\build\out\qmltooling/qmldbg_preview.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_profiler_dll" Source="..\build\out\qmltooling/qmldbg_profiler.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_quick3dprofiler_dll" Source="..\build\out\qmltooling/qmldbg_quick3dprofiler.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_quickeventreplay_dll" Source="..\build\out\qmltooling/qmldbg_quickeventreplay.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_quickprofiler_dll" Source="..\build\out\qmltooling/qmldbg_quickprofiler.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_server_dll" Source="..\build\out\qmltooling/qmldbg_server.dll" /></Component>
+      <Component Guid="*"><File Id="File_qmltooling_qmldbg_tcp_dll" Source="..\build\out\qmltooling/qmldbg_tcp.dll" /></Component>
+      <Component Guid="*"><File Id="File_sqldrivers_qsqlibase_dll" Source="..\build\out\sqldrivers/qsqlibase.dll" /></Component>
+      <Component Guid="*"><File Id="File_sqldrivers_qsqlite_dll" Source="..\build\out\sqldrivers/qsqlite.dll" /></Component>
+      <Component Guid="*"><File Id="File_sqldrivers_qsqlmimer_dll" Source="..\build\out\sqldrivers/qsqlmimer.dll" /></Component>
+      <Component Guid="*"><File Id="File_sqldrivers_qsqloci_dll" Source="..\build\out\sqldrivers/qsqloci.dll" /></Component>
+      <Component Guid="*"><File Id="File_sqldrivers_qsqlodbc_dll" Source="..\build\out\sqldrivers/qsqlodbc.dll" /></Component>
+      <Component Guid="*"><File Id="File_sqldrivers_qsqlpsql_dll" Source="..\build\out\sqldrivers/qsqlpsql.dll" /></Component>
+      <Component Guid="*"><File Id="File_tls_qcertonlybackend_dll" Source="..\build\out\tls/qcertonlybackend.dll" /></Component>
+      <Component Guid="*"><File Id="File_tls_qschannelbackend_dll" Source="..\build\out\tls/qschannelbackend.dll" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_ar_qm" Source="..\build\out\translations/qt_ar.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_bg_qm" Source="..\build\out\translations/qt_bg.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_ca_qm" Source="..\build\out\translations/qt_ca.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_cs_qm" Source="..\build\out\translations/qt_cs.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_da_qm" Source="..\build\out\translations/qt_da.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_de_qm" Source="..\build\out\translations/qt_de.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_en_qm" Source="..\build\out\translations/qt_en.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_es_qm" Source="..\build\out\translations/qt_es.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_fa_qm" Source="..\build\out\translations/qt_fa.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_fi_qm" Source="..\build\out\translations/qt_fi.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_fr_qm" Source="..\build\out\translations/qt_fr.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_gd_qm" Source="..\build\out\translations/qt_gd.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_he_qm" Source="..\build\out\translations/qt_he.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_hr_qm" Source="..\build\out\translations/qt_hr.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_hu_qm" Source="..\build\out\translations/qt_hu.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_it_qm" Source="..\build\out\translations/qt_it.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_ja_qm" Source="..\build\out\translations/qt_ja.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_ka_qm" Source="..\build\out\translations/qt_ka.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_ko_qm" Source="..\build\out\translations/qt_ko.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_lg_qm" Source="..\build\out\translations/qt_lg.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_lv_qm" Source="..\build\out\translations/qt_lv.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_nl_qm" Source="..\build\out\translations/qt_nl.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_nn_qm" Source="..\build\out\translations/qt_nn.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_pl_qm" Source="..\build\out\translations/qt_pl.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_pt_BR_qm" Source="..\build\out\translations/qt_pt_BR.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_ru_qm" Source="..\build\out\translations/qt_ru.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_sk_qm" Source="..\build\out\translations/qt_sk.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_sv_qm" Source="..\build\out\translations/qt_sv.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_tr_qm" Source="..\build\out\translations/qt_tr.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_uk_qm" Source="..\build\out\translations/qt_uk.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_zh_CN_qm" Source="..\build\out\translations/qt_zh_CN.qm" /></Component>
+      <Component Guid="*"><File Id="File_translations_qt_zh_TW_qm" Source="..\build\out\translations/qt_zh_TW.qm" /></Component>
+      <Component Guid="*"><File Id="File_vectorimageformats_qlottievectorimage_dll" Source="..\build\out\vectorimageformats/qlottievectorimage.dll" /></Component>
+    </ComponentGroup>
+  </Fragment>
+</Include>
+
+
+
+
+
+
+
