@@ -83,3 +83,6 @@ Testing/
 *.zip
 *.tar.gz
 MusStream/.qtcreator/CMakeLists.txt.user
+*.user
+/MusStream/.qtcreator
+*.user
