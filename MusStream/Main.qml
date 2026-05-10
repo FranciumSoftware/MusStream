@@ -16,13 +16,12 @@ ApplicationWindow {
 
     signal changeMediaSource(string source)
     Component.onCompleted: {
-        initiateDB()
-        globalMediaPlayer.sourceChanged.connect(function(newSource) {
+        initiateDB();
+        globalMediaPlayer.sourceChanged.connect(function (newSource) {
             title.text = cppManager.getName();
             artist.text = cppManager.getArtist();
             cover.source = cppManager.getCover();
-
-        })
+        });
     }
 
     MessageDialog {
@@ -43,8 +42,6 @@ ApplicationWindow {
         }
     }
 
-
-
     FontLoader {
         id: iconFont
         source: "qrc:/font/Assets/mustream.ttf"
@@ -60,16 +57,13 @@ ApplicationWindow {
             anchors.leftMargin: 0
             anchors.rightMargin: 0
 
-                Image {
-                    id: cover
-                    fillMode: Image.PreserveAspectFit
-                    Layout.preferredHeight: 40
-                    Layout.maximumWidth: 60
-                    source: "qrc:/images/Assets/default_cover.png"
-
+            Image {
+                id: cover
+                fillMode: Image.PreserveAspectFit
+                Layout.preferredHeight: 40
+                Layout.maximumWidth: 60
+                source: "qrc:/images/Assets/default_cover.png"
             }
-
-
 
             ColumnLayout {
                 Layout.preferredWidth: 150
@@ -99,10 +93,10 @@ ApplicationWindow {
                     color: "transparent"
                 }
                 palette: {
-                    buttonText: black
-                    brightText: black
-                    highlight: black
-                    windowText: black
+                    buttonText: black;
+                    brightText: black;
+                    highlight: black;
+                    windowText: black;
                 }
             }
 
@@ -122,30 +116,30 @@ ApplicationWindow {
                 }
                 background: Rectangle {
                     x: timeMusic.leftPadding
-                            y: timeMusic.topPadding + timeMusic.availableHeight / 2 - height / 2
-                            implicitWidth: 200
-                            implicitHeight: 4
-                            width: timeMusic.availableWidth
-                            height: implicitHeight
-                            radius: 2
-                            color: "#bdbebf"
+                    y: timeMusic.topPadding + timeMusic.availableHeight / 2 - height / 2
+                    implicitWidth: 200
+                    implicitHeight: 4
+                    width: timeMusic.availableWidth
+                    height: implicitHeight
+                    radius: 2
+                    color: "#bdbebf"
 
-                            Rectangle {
-                                width: timeMusic.visualPosition * parent.width
-                                height: parent.height
-                                color: "#21be2b"
-                                radius: 2
-                            }
+                    Rectangle {
+                        width: timeMusic.visualPosition * parent.width
+                        height: parent.height
+                        color: "#21be2b"
+                        radius: 2
                     }
+                }
                 handle: Rectangle {
                     x: timeMusic.leftPadding + timeMusic.visualPosition * (timeMusic.availableWidth - width)
-                            y: timeMusic.topPadding + timeMusic.availableHeight / 2 - height / 2
-                            implicitWidth: 13
-                            implicitHeight: 13
-                            radius: 6.5
-                            color: timeMusic.pressed ? "#f0f0f0" : "#f6f6f6"
-                            border.color: "#bdbebf"
-                    }
+                    y: timeMusic.topPadding + timeMusic.availableHeight / 2 - height / 2
+                    implicitWidth: 13
+                    implicitHeight: 13
+                    radius: 6.5
+                    color: timeMusic.pressed ? "#f0f0f0" : "#f6f6f6"
+                    border.color: "#bdbebf"
+                }
             }
         }
     }
@@ -199,6 +193,7 @@ ApplicationWindow {
                     Layout.fillHeight: true
 
                     clip: true // Évite que le texte dépasse pendant l'animation
+                    property string activePage: "interface/Home.qml"
                     model: ListModel {
                         ListElement {
                             name: "Home"
@@ -249,16 +244,24 @@ ApplicationWindow {
 
                         background: Rectangle {
                             color: parent.hovered ? "#dddddd" : "transparent"
+                            Rectangle {
+                                visible: menuList.activePage === model.page
+                                width: 3
+                                height: parent.height
+                                color: "#05a12d"
+                                anchors.left: parent.left
+                            }
                         }
 
-                        onClicked: stackView.replace(model.page)
+                        onClicked: {
+                            stackView.replace(model.page);
+                            menuList.activePage = model.page;  // Met à jour la page active
+                        }
                     }
                 }
             }
         }
         // Exemple d'appel au démarrage
-
-
 
         // --- ZONE DE CONTENU ---
         StackView {
@@ -266,12 +269,23 @@ ApplicationWindow {
             Layout.fillWidth: true
             Layout.fillHeight: true
             initialItem: "interface/Home.qml"
+            replaceEnter: Transition {}   // Désactive l'animation d'entrée
+            replaceExit: Transition {}    // Désactive l'animation de sortie
+            // Connecter le signal de Home.qml quand il est chargé
+            onCurrentItemChanged: {
+                if (currentItem && currentItem.navigateTo !== undefined) {
+                    currentItem.navigateTo.connect(function (page) {
+                        stackView.replace(page);
+                        menuList.activePage = page;
+                    });
+                }
+            }
         }
     }
     Connections {
         target: stackView
         function goToSearchPage() {
-            stackView.replace("interface/Search.qml")
+            stackView.replace("interface/Search.qml");
         }
     }
 }

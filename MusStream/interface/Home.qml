@@ -10,7 +10,7 @@ Page {
     QtObject {
         id: globalSearch
     }
-
+    signal navigateTo(string page)
     ColumnLayout {
         width: parent.width;
         Rectangle {
@@ -24,6 +24,7 @@ Page {
                 anchors.fill: parent
                 anchors.rightMargin: 30;
                 anchors.leftMargin: 30;
+                spacing: 20;
                 Text {
                     text: "Welcome Back !"
                     fontSizeMode: Text.Fit
@@ -31,28 +32,58 @@ Page {
                     wrapMode: Text.WordWrap
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
+                    Layout.rightMargin: 20
                 }
-                Item {
-                    width: 100;
-                    height: 40;
+                RowLayout {
+                    spacing: 8
+                    Layout.alignment: Qt.AlignRight
+                    Item {
+                        width: 100;
+                        height: 40;
 
-                    signal goToSearchPage()
-                    Rectangle {
-                        anchors.fill: parent;
-                        color: "#17d10a";
-                        radius: 10;
+                        signal goToSearchPage()
+                        Rectangle {
+                            anchors.fill: parent;
+                            color: "#17d10a";
+                            radius: 10;
+                        }
+                        MouseArea {
+                            id: searchFromHome
+                            anchors.fill: parent;
+                            onClicked: navigateTo("interface/Search.qml")
+                            cursorShape: Qt.PointingHandCursor
+                        }
+                        Text {
+                            text: qsTr("Search")
+                            font.pixelSize: 10
+                            anchors.centerIn: parent
+                        }
                     }
-                    MouseArea {
-                        id: searchFromHome
-                        anchors.fill: parent;
-                        onClicked: goToSearchPage()
-                    }
-                    Text {
-                        text: qsTr("Search")
-                        font.pixelSize: 10
-                        anchors.centerIn: parent
+                    Item {
+                        width: 100;
+                        height: 40;
+
+                        signal goToSearchPage()
+                        Rectangle {
+                            anchors.fill: parent;
+                            color: "#17d10a";
+                            radius: 10;
+                        }
+                        MouseArea {
+                            id: sourcesFromHome
+                            anchors.fill: parent;
+                            onClicked: navigateTo("interface/Sources.qml")
+                            cursorShape: Qt.PointingHandCursor
+                        }
+                        Text {
+                            text: qsTr("Manage sources")
+                            font.pixelSize: 10
+                            anchors.centerIn: parent
+                        }
                     }
                 }
+
+
             }
 
 
