@@ -3,6 +3,7 @@
 ![GitHub License](https://img.shields.io/github/license/FranciumSoftware/MusStream)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/FranciumSoftware/MusStream)
 ![GitHub Release](https://img.shields.io/github/v/release/FranciumSoftware/MusStream)
+
 MusStream is a music streaming application built using the Qt framework. It allows users to stream their favorite music from various online sources, create playlists, and manage their music library.
 ## Features
 - Add sources: Users can add their preferred music streaming sources to the application.
