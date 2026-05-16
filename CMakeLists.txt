@@ -13,7 +13,7 @@ qt_add_executable(MusStream
 )
 
 qt_add_qml_module(MusStream
-    URI src/MusStream
+    URI MusStream
     QML_FILES
         src/Main.qml
         RESOURCES src/Resources.qrc
