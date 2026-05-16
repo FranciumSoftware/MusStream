@@ -86,3 +86,6 @@ MusStream/.qtcreator/CMakeLists.txt.user
 *.user
 /MusStream/.qtcreator
 *.user
+*.user
+MusStream/.qtcreator/CMakeLists.txt.user
+/MusStream/.qtcreator

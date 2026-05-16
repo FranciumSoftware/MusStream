@@ -85,3 +85,20 @@ void backEnd::setInfosTo(const QString name, const QString artist, const QString
     private_artist = artist;
     private_cover = cover;
 }
+void backEnd::randomMusics() {
+    qDebug() << "Calling function";
+    database database;
+    QList<QMap<QString, QVariant>> result = database.get10RandomMusics();
+
+    QVariantList variantList;
+    for (const auto &map : result) {
+        QVariantMap variantMap;
+        for (auto it = map.constBegin(); it != map.constEnd(); ++it) {
+            variantMap[it.key()] = it.value();
+        }
+        variantList.append(variantMap);
+    }
+
+    m_randomMusics = variantList;
+    emit randomMusicsChanged();
+}

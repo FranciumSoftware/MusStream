@@ -31,6 +31,7 @@ public:
     QList<QMap<QString, QVariant>> getAddedSources();
     bool deleteSource(const int id);
     QList<QMap<QString, QVariant>> searchMusic(QString search);
+    QList<QMap<QString, QVariant>> get10RandomMusics();
 private:
     QSqlDatabase db;
 signals:

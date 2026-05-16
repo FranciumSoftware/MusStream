@@ -14,4 +14,7 @@
         <file>Assets/default_cover.png</file>
         <file>Assets/Logo.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>interface/compoments/MusicRow.qml</file>
+    </qresource>
 </RCC>
