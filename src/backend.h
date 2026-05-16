@@ -2,6 +2,7 @@
 #define BACKEND_H
 
 #include "sourcemanager.h"
+#include "updatechecker.h"
 
 #include <QObject>
 /**
@@ -27,6 +28,7 @@ public:
     Q_INVOKABLE QString getName() {return private_name;}
     Q_INVOKABLE QString getArtist() {return private_artist;}
     Q_INVOKABLE QString getCover() {return private_cover;}
+    Q_INVOKABLE void checkForUpdates();
 
     QVariantList getSearchResults() const { return m_searchResults; }
     QVariantList get10randomMusics() const { return m_randomMusics; }
@@ -39,11 +41,13 @@ private:
     QString private_artist = "Artist";
     QString private_name = "Title";
     QString private_cover = "";
+    UpdateChecker *m_updateChecker;
 signals:
     void sourceAddedSuccess();
     void sourceAddedError(QString message);
     void searchResultsChanged();
     void randomMusicsChanged();
+    void updateAvailable(const QString &version, const QString &url, const QString &changelog);
 };
 
 #endif // BACKEND_H

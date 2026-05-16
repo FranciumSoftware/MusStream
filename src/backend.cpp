@@ -13,6 +13,12 @@ backEnd::backEnd(QObject *parent)
         // On informe l'UI que c'est un succès !
         emit sourceAddedSuccess();
     });
+    m_updateChecker = new UpdateChecker(this);
+
+    connect(m_updateChecker, &UpdateChecker::updateAvailable,
+            this, &backEnd::updateAvailable);
+
+
 }
 /**
  * @brief Call every neccessary functions at the launch of the app
@@ -101,4 +107,9 @@ void backEnd::randomMusics() {
 
     m_randomMusics = variantList;
     emit randomMusicsChanged();
+}
+
+void backEnd::checkForUpdates() {
+    qDebug() << "Calling function in backend";
+    m_updateChecker->checkForUpdates();
 }

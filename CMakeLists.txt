@@ -7,25 +7,27 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick Sql Multimedia)
 
 qt_standard_project_setup(REQUIRES 6.8)
-
 qt_add_executable(MusStream
-    main.cpp
+    src/main.cpp
 )
 
 qt_add_qml_module(MusStream
     URI MusStream
     QML_FILES
-        Main.qml
-        RESOURCES Resources.qrc
-        QML_FILES interface/Home.qml
-        QML_FILES interface/Search.qml
-        SOURCES database.h database.cpp
-        QML_FILES interface/Sources.qml
-        QML_FILES interface/compoments/MusicRow.qml
-        SOURCES sourcemanager.h sourcemanager.cpp
-        SOURCES backend.h backend.cpp
+        src/Main.qml
+        RESOURCES src/Resources.qrc
+        QML_FILES src/interface/Home.qml
+        QML_FILES src/interface/Search.qml
+        SOURCES src/database.h src/database.cpp
+        QML_FILES src/interface/Sources.qml
+        QML_FILES src/interface/compoments/MusicRow.qml
+        SOURCES src/sourcemanager.h src/sourcemanager.cpp
+        SOURCES src/backend.h src/backend.cpp
+        QML_FILES src/interface/Settings.qml
+        SOURCES
+        SOURCES src/updatechecker.h src/updatechecker.cpp
 )
-qt6_add_resources(QRC_SOURCES Resources.qrc)
+qt6_add_resources(QRC_SOURCES src/Resources.qrc)
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
@@ -39,7 +41,7 @@ set_target_properties(MusStream PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 if(WIN32)
-    set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/resources/app_icon.rc")
+    set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/src/resources/app_icon.rc")
     # Ajouter le fichier .rc aux sources de l'exécutable
     target_sources(MusStream PRIVATE ${app_icon_resource_windows})
 endif()
