@@ -210,6 +210,11 @@ ApplicationWindow {
                             iconCode: "\ue811"
                             page: "interface/Sources.qml"
                         }
+                        ListElement {
+                            name: "Settings"
+                            iconCode: "\ue80b"
+                            page: "interface/Settings.qml"
+                        }
                     }
 
                     delegate: ItemDelegate {
