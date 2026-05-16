@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick Sql Multimedia)
 
 qt_standard_project_setup(REQUIRES 6.8)
-
 qt_add_executable(MusStream
     src/main.cpp
 )
@@ -25,6 +24,8 @@ qt_add_qml_module(MusStream
         SOURCES src/sourcemanager.h src/sourcemanager.cpp
         SOURCES src/backend.h src/backend.cpp
         QML_FILES src/interface/Settings.qml
+        SOURCES
+        SOURCES src/updatechecker.h src/updatechecker.cpp
 )
 qt6_add_resources(QRC_SOURCES src/Resources.qrc)
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

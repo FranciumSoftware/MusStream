@@ -16,12 +16,14 @@ ApplicationWindow {
 
     signal changeMediaSource(string source)
     Component.onCompleted: {
+        cppManager.checkForUpdates();
         initiateDB();
         globalMediaPlayer.sourceChanged.connect(function (newSource) {
             title.text = cppManager.getName();
             artist.text = cppManager.getArtist();
             cover.source = cppManager.getCover();
         });
+
     }
 
     MessageDialog {
@@ -29,6 +31,67 @@ ApplicationWindow {
         title: "Erreur Base de Données"
         text: qsTr("Impossible d'initialialiser la base de données")
         buttons: MessageDialog.Ok
+    }
+    // Dialog mise à jour
+    Dialog {
+        id: updateDialog
+        title: "Mise à jour disponible"
+        modal: true
+        anchors.centerIn: parent
+        width: 400
+        background: Rectangle {
+            color: "#efefef"
+        }
+
+        property string downloadUrl: ""
+
+        ColumnLayout {
+            anchors.fill: parent
+            spacing: 10
+
+            Text {
+                id: updateText
+                text: ""
+                wrapMode: Text.WordWrap
+                Layout.fillWidth: true
+            }
+
+            RowLayout {
+                Layout.alignment: Qt.AlignRight
+                Button {
+                    text: qsTr("Later")
+                    onClicked: updateDialog.close()
+                    background: Rectangle {
+                        color: "transparent"
+                    }
+                    palette.buttonText: "black"
+                }
+                Button {
+                    text: qsTr("Download")
+                    background: Rectangle {
+                        color: "#05a12d"
+                        radius: 6
+                    }
+                    palette.buttonText: "white"
+                    onClicked: {
+                        Qt.openUrlExternally(updateDialog.downloadUrl)
+                        updateDialog.close()
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // Connexion au signal :
+    Connections {
+        target: cppManager
+        function onUpdateAvailable(version, url, changelog) {
+            updateDialog.downloadUrl = url
+            updateText.text = "Version " + version + " disponible !\n\n" + changelog
+            updateDialog.open()
+        }
     }
 
     function initiateDB() {
