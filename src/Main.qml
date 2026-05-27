@@ -35,7 +35,7 @@ ApplicationWindow {
     // Dialog mise à jour
     Dialog {
         id: updateDialog
-        title: "Mise à jour disponible"
+        title: qsTr("An update is avalaible")
         modal: true
         anchors.centerIn: parent
         width: 400
