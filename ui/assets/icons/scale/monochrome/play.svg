@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666665 8.4666666"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="play Button V2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="16"
+     inkscape:cx="18.9375"
+     inkscape:cy="17.65625"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect10"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0.17614153,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0.28718121,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-dashoffset:0;paint-order:stroke fill markers"
+       id="path10"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="1.6977071"
+       sodipodi:cy="2.1149402"
+       sodipodi:r1="3.6543865"
+       sodipodi:r2="1.8091764"
+       sodipodi:arg1="7.6376725e-13"
+       sodipodi:arg2="0.98019392"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 5.1989158,2.2019022 -2.4937481,1.4157496 -2.8346539,1.6620799 0.0220764,-3.0436608 -0.020147,-2.99874757 A 0.16313995,0.16313995 150.01532 0 1 0.11817201,-0.90446069 L 2.4953632,0.49109778 5.1989623,2.0278962 a 0.10006128,0.10006128 90.015319 0 1 -4.65e-5,0.174006 z"
+       inkscape:transform-center-x="-1.0156707"
+       inkscape:transform-center-y="0.0077869871"
+       transform="matrix(1.1149411,0,0,1.0824747,1.6144408,1.7074128)"
+       inkscape:path-effect="#path-effect10" />
+  </g>
+</svg>

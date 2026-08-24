@@ -1,0 +1,31 @@
+[package]
+name = "MusStream"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rodio = {
+    version="0.22.2",
+    default-features = true,
+    features = [
+        "vorbis",
+        "claxon",
+        "hound",
+        "symphonia-all",
+    ]
+}             # Gère le décodage audio et la carte son
+stream-download = "0.24"   # Télécharge et bufferise le flux HTTPS de manière transparente
+tokio = { version = "1.0", features = ["full"] } # Gère l'asynchronisme requis pour l
+slint = {version = "1.17.0", features = ["renderer-winit-skia"]}
+image = "0.24"
+reqwest = { version = "0.13.4", features = ["blocking"]}
+base64 = "0.22.1"
+lofty = "0.24.0"
+sqlite = "0.37.0"
+serde_json = "1.0.151"
+serde = { version = "1.0.229", features = ["derive"] }
+csv = "1.4.0"
+
+
+[build-dependencies]
+slint-build = "1.17.0"

@@ -1,0 +1,67 @@
+import {Theme} from "../properties.slint";
+import {Icon} from "./icon.slint";
+
+export component SidebarItem inherits Rectangle {
+    in property <string> label;
+    in property <bool> active;
+    in property <string> icon;
+    callback clicked;
+
+    background: active ? Theme.background-first : transparent;
+    border-width: scope.has-focus ? 3px : 0px;
+    border-color: scope.has-focus ? Theme.text-color : transparent;
+    vertical-stretch: 0;
+
+    scope := FocusScope {
+        focus-on-tab-navigation: true;
+
+        key-pressed(event) => {
+            if (event.text == "\n" || event.text == " ") {
+                root.clicked();
+                return accept;
+            }
+            return reject;
+        }
+    }
+
+    ta := TouchArea {
+        clicked => {
+            root.clicked();
+        }
+    }
+
+    states [
+        active-hover when ta.has-hover: {
+            root.background: Theme.background-third;
+        }
+    ]
+
+    HorizontalLayout {
+        Rectangle {
+            width: 3px;
+            background: Theme.accent-color;
+            visible: root.active;
+        }
+
+        content := HorizontalLayout {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 5px;
+            spacing: 2pt;
+
+            Icon {
+
+                icon: root.icon;
+                font-size: 20pt;
+                width: 20pt;
+            }
+            Text {
+                text: label;
+                // Le texte s'illumine aussi si l'élément a le focus
+                color: (active || scope.has-focus) ? Theme.text-color : Theme.text-color-disabled;
+                font-size: 20pt;
+                horizontal-alignment: left;
+            }
+        }
+    }
+}

@@ -1,0 +1,116 @@
+import { Theme } from "../properties.slint";
+import { HomePage } from "home.slint";
+import { LineEdit, ListView } from "std-widgets.slint";
+import { Icon, Icons } from "../components/icon.slint";
+import { IconButton } from "../components/iconButton.slint";
+import { LoadingBox } from "../components/dialog.slint";
+
+// Struct for sources metadata
+export struct Source {
+    id: int,
+    name: string,
+    url: string,
+}
+
+export component SourcePage inherits Rectangle {
+    callback addSource(url: string);
+    callback showProgress(title: string, message: string, determinated: bool, current_progress: int);
+    callback updateProgress(current_progress: int, determinated: bool);
+    callback delete_source(id: int);
+
+    in property <[Source]> Sources; // List of sources to display
+
+
+    in-out property <string> current_title;
+    in-out property <string> current_message;
+    in-out property <bool> determinated;
+    in-out property <int> current_progress;
+
+
+    width: 100%;
+    height: 100%;
+
+    adding_in_progress:= LoadingBox {
+        x: (parent.width - self.width) / 2;
+        y: (parent.height - self.height) / 2;
+        title_message: root.current_title;
+        message: root.current_message;
+        determinated: root.determinated;
+        progress: root.current_progress;
+    }
+    // Called when a source is added
+    addSource(url) => {
+        showProgress("Ajout de la source", "En cours...", false, 0);
+    }
+    // Called to show user a source is adding
+    showProgress(title, msg, determinated, current_progress) => {
+        root.current_title = title;
+        root.current_message = msg;
+        root.determinated = determinated;
+        root.current_progress = current_progress;
+        adding_in_progress.show();
+    }
+
+    updateProgress(current_progress, determinated) => {
+        root.current_progress = current_progress;
+        root.determinated = determinated;
+    }
+
+    VerticalLayout {
+        alignment: start;
+        spacing: 20px;
+        padding: 20px;
+        Text {
+            text: "Sources";
+            font-size: Theme.h1;
+            color: Theme.text-color;
+        }
+        HorizontalLayout {
+            max-height: 30px;
+            spacing: 2px;
+            url:=LineEdit {
+                placeholder-text: "Enter source url here";
+            }
+            IconButton {
+                icon: Icons.Playlist-add;
+                text: "Add source";
+                background-color: Theme.accent-color;
+                clicked => addSource(url.text);
+            }
+        }
+        Text {
+            text: "Installed sources";
+            font-size: Theme.h2;
+        }
+        ListView {
+
+            for item in root.Sources : Rectangle {
+                    width: 100%;
+                    height: 50px;
+                    Rectangle {
+                        background: Theme.background-second;
+                        border-radius: 10px;
+                        HorizontalLayout {
+                            padding-left: 10px;
+                            Text {
+                                text: item.name;
+                                font-size: Theme.h5;
+                                color: Theme.text-color;
+                                horizontal-alignment: left;
+                                vertical-alignment: center;
+                            }
+                                IconButton {
+                                    text: "Delete";
+                                    background-color: Theme.accent-color;
+                                    clicked => delete_source(item.id);
+                                    max-height: 2px;
+                                    max-width: 40px;
+                                }
+                            }
+                        }
+                    }
+
+            }
+        }
+
+    }

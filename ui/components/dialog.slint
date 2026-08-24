@@ -1,0 +1,95 @@
+import { Button, VerticalBox, Spinner } from "std-widgets.slint";
+import { Theme } from "../properties.slint";
+
+export component WarningBox inherits PopupWindow {
+    in property <string> title_message;
+    in property <string> message;
+
+    close-policy: close-on-click-outside;
+
+    Rectangle {
+        background: Theme.background-warning;
+        border-color: transparent;
+        border-width: 1px;
+        border-radius: 4px;
+        width: 300px;
+        height: 150px;
+        drop-shadow-blur: 30px;
+        drop-shadow-color: black;
+
+
+
+        VerticalBox {
+            padding: 15px;
+
+            Text {
+                text: root.title_message;
+                font-weight: 500;
+                font-size: 16px;
+            }
+
+            Text {
+                text: root.message;
+                wrap: word-wrap;
+            }
+            Button {
+                text: "OK";
+                primary: true;
+                clicked => {
+                    root.close();
+                }
+            }
+        }
+    }
+}
+export component LoadingBox inherits PopupWindow {
+    in property <string> title_message;
+    in property <string> message;
+    in property <float> progress;
+    in property <bool> determinated;
+    close-policy: close-on-click-outside;
+
+    Rectangle {
+        background: Theme.background-warning;
+        border-color: transparent;
+        border-width: 1px;
+        border-radius: 4px;
+        width: 300px;
+        height: 150px;
+        drop-shadow-blur: 30px;
+        drop-shadow-color: black;
+
+
+
+        VerticalBox {
+            padding: 15px;
+
+            Text {
+                text: root.title_message;
+                font-weight: 500;
+                font-size: 16px;
+            }
+
+
+            HorizontalLayout {
+                Spinner {
+                    indeterminate: !root.determinated;
+                    progress: root.progress;
+                }
+                Text {
+                    text: root.message;
+                    wrap: word-wrap;
+                }
+
+            }
+
+            Button {
+                text: "Cancel";
+                primary: false;
+                clicked => {
+                    root.close();
+                }
+            }
+        }
+    }
+}
