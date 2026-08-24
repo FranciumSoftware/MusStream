@@ -1,0 +1,45 @@
+import {Icons, Icon} from "./icon.slint";
+import {Palette, StyleMetrics} from "std-widgets.slint";
+
+export component IconButton inherits Rectangle {
+    in property <color> background-color: Palette.background;
+    in property <string> icon;
+    in property <length> radius: 8px;
+    in property <string> text;
+    in property <color> foreground: Palette.foreground;
+    in property <length> font-size;
+    background: root.background-color;
+    border-radius: root.radius;
+    inner-shadow-spread: touch.has-hover ? 10px : 0px;
+    inner-shadow-blur: 5px;
+    inner-shadow-color: black;
+    callback clicked();
+
+
+    HorizontalLayout {
+        padding: 2px;
+        padding-right: 10px;
+        padding-left: 10px;
+        width: root.width;
+        height: root.height;
+        spacing: 2px;
+        Icon {
+            icon: root.icon;
+            color: root.foreground;
+            vertical-alignment: center;
+            font-size: root.font-size;
+        }
+        Text {
+            text: root.text;
+            color: root.foreground;
+            vertical-alignment: center;
+            font-size: root.font-size;
+        }
+    }
+    touch:=TouchArea {
+        height: root.height;
+        width: root.width;
+        clicked => root.clicked();
+    }
+
+}

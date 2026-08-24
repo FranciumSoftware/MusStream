@@ -1,0 +1,21 @@
+import { Palette } from "std-widgets.slint";
+
+export global Theme {
+    in-out property <bool> dark-mode: Palette.color-scheme == ColorScheme.dark;
+
+    out property <color> background-first: dark-mode ? #1a1a1f : #ffffff;
+    out property <color> background-second: dark-mode ? #15151a : #dedede;
+    out property <color> background-third: dark-mode ? #101015 : #cdcdcd;
+    out property <color> accent-color: dark-mode ? #0DBA0Bff : #05a12dff;
+    out property <color> text-color: dark-mode ? #ffffff : #000000;
+    out property <color> text-color-disabled: dark-mode ? #888888 : #555555;
+    out property <color> background-warning: dark-mode ? #1a1a1faa : #ffffffaa;
+
+    out property <length> h1: 36px;
+    out property <length> h2: 30px;
+    out property <length> h3: 24px;
+    out property <length> h4: 18px;
+    out property <length> h5: 14px;
+    out property <length> h6: 12px;
+
+}

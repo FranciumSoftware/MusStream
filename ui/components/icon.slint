@@ -1,0 +1,27 @@
+import "../assets/fonts/MusStream.ttf";
+
+export global Icons {
+    out property <string> Settings: "\u{E010}";
+    out property <string> Magnify: "\u{E00F}";
+    out property <string> Remove-song-to-playlist: "\u{E00E}";
+    out property <string> Profile: "\u{E00D}";
+    out property <string> Library: "\u{E009}";
+    out property <string> Right-to-left-arrow: "\u{E008}";
+    out property <string> Home: "\u{E007}";
+    out property <string> History: "\u{E006}";
+    out property <string> Playlist-favorite: "\u{E005}";
+    out property <string> Favorite: "\u{E004}";
+    out property <string> Playlist-edit: "\u{E003}";
+    out property <string> Playlist-remove: "\u{E002}";
+    out property <string> Playlist-create: "\u{E001}";
+    out property <string> Playlist-add: "\u{E011}";
+    out property <string> Menu: "\u{E00A}";
+    out property <string> Play: "\u{E00C}";
+    out property <string> Pause: "\u{E00B}";
+}
+export component Icon inherits Text {
+    in property <string> icon;
+    font-family: "MusStream";
+    text: icon;
+
+}

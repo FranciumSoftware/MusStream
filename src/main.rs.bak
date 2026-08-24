@@ -1,0 +1,38 @@
+use std::error::Error;
+use stream_download::storage::temp::TempStorageProvider;
+use stream_download::{Settings, StreamDownload};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    let url = "https://www.auboutdufil.com/get.php?fla=https://archive.org/download/jens-east-running-ft-elske/JensEast-Running-ft-Elske.mp3";
+    println!("Chargement du flux HTTPS : {}...", url);
+
+    // 1. On télécharge et bufferise le flux HTTPS
+    let reader = StreamDownload::new_http(
+        url.parse()?,
+        TempStorageProvider::new(),
+        Settings::default(),
+    )
+    .await?;
+
+    println!("Lecture en cours... Appuyez sur Ctrl+C pour arrêter.");
+
+    // 2. On ouvre le périphérique de sortie audio par défaut (anciennement OutputStream)
+    // IMPORTANT : 'sink_handle' doit rester en vie tant que la musique joue !
+    let sink_handle = rodio::DeviceSinkBuilder::open_default_sink()
+        .map_err(|e| format!("Impossible d'ouvrir le périphérique audio : {:?}", e))?;
+
+    // 3. On crée un 'Player' connecté au mixeur de la carte son (anciennement Sink)
+    let player = rodio::Player::connect_new(&sink_handle.mixer());
+
+    // 4. On décode le flux audio fourni par stream-download
+    let source = rodio::Decoder::new(reader)?;
+
+    // 5. On balance le son dans le Player
+    player.append(source);
+
+    // Bloque le programme le temps que la musique joue (indéfini pour une radio en direct)
+    player.sleep_until_end();
+
+    Ok(())
+}

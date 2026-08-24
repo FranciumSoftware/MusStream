@@ -1,0 +1,29 @@
+export component MusicInfos{
+    in property <string> name;
+    in property <string> artist;
+    in property <string> album;
+    in property <image> img: @image-url("../assets/icons/scale/logo.svg");
+    HorizontalLayout {
+    min-height: 50px;
+    padding-right: 8px;
+    Image {
+        source: root.img;
+        height: 48px;
+        width: 48px;
+
+        accessible-label: "Music Cover";
+        horizontal-stretch: 1;
+    }
+        VerticalLayout {
+            Text {
+                text: name;
+            }
+            Text {
+                text: artist;
+            }
+            Text {
+                text: album;
+            }
+        }
+    }
+}

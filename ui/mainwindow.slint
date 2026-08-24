@@ -1,0 +1,286 @@
+import { Button, VerticalBox, Slider, LineEdit, ListView } from "std-widgets.slint";
+import { HomePage } from "./pages/home.slint";
+import { SourcePage } from "./pages/sources.slint";
+import { Theme } from "./properties.slint";
+import {Icon, Icons} from "./components/icon.slint";
+import { IconButton } from "./components/iconButton.slint";
+import { SidebarItem } from "./components/sidebar.slint";
+import { MusicInfos } from "./components/infos.slint";
+import { WarningBox, LoadingBox } from "./components/dialog.slint";
+
+export struct Source {
+    id: int,
+    name: string,
+    url: string,
+}
+export struct MusicsDisplayed {
+    id: int,
+    title: string,
+    url: string,
+    artist: string,
+    album: string,
+    cover_url: string,
+    cover: image,
+}
+
+export component MainWindow inherits Window {
+    min-height: 480px;
+    min-width: 848px;
+    max-height: 4294967296px;
+    max-width: 4294967296px;
+    in-out property <int> current-page: 0;
+    callback init_sys;
+    callback pause;
+    callback play;
+    callback position_changed(float);
+    callback show_warning(string, string);
+    callback add_source(string);
+    callback show_search_field;
+    callback search(string);
+    callback hide_search_field();
+    callback play_music(string, string, string, string, string);
+    in-out property <bool> is-changing: false;
+    in-out property <float> maxtime: 0;
+    in-out property <float> currenttime: 0;
+    in-out property <float> previewtime: 0;
+    in-out property <image> cover;
+    in-out property <bool> searching: false;
+    in-out property <string> title_music;
+    in-out property <string> artist;
+    in-out property <string> album;
+
+    in property <[Source]> sources;
+    in property <[MusicsDisplayed]> musics;
+
+
+    property <string> current_title: "";
+    property <string> current_message: "";
+
+    property <bool> is-playing: true;
+
+    title: "MusStream";
+    icon: @image-url("assets/icons/scale/logo.svg");
+    background: Theme.background-third;
+    init => {
+        root.init_sys();
+    }
+    warning_box := WarningBox {
+        // Centrage par rapport à la fenêtre principale
+        x: (parent.width - self.width) / 2;
+        y: (parent.height - self.height) / 2;
+        title_message: root.current_title;
+        message: root.current_message;
+    }
+
+    show_warning(title, msg) => {
+        root.current_title = title;
+        root.current_message = msg;
+        warning_box.show(); // Méthode native pour afficher le popup
+    }
+    //Show the search field
+    show_search_field() => {
+        root.searching = true;
+    }
+    hide_search_field() => {
+        root.searching = false;
+    }
+    VerticalLayout {
+        Rectangle {
+            HorizontalLayout {
+            min-height: 200px;
+                IconButton {
+                    icon: is-playing ? Icons.Pause : Icons.Play;
+                    background: transparent;
+                    font-size: Theme.h4;
+                    clicked => {
+                        root.pause();
+                        root.is-playing = !root.is-playing;
+                    }
+                }
+                infos:=MusicInfos {
+                    name: root.title_music;
+                    artist: root.artist;
+                    album: root.album;
+                    img: root.cover;
+                    min-height: 50px;
+                }
+                Slider {
+                    value <=> root.currenttime;
+                    maximum: root.maxtime;
+
+                    changed(value) => {
+                        root.position_changed(value);
+                        root.previewtime = value;
+                        root.is-changing = true;
+                    }
+
+                    //released(value) => {
+
+                    //    root.currenttime = value;
+                    //    root.is-changing = false;
+                    //}
+                }
+                searchfield:=LineEdit {
+                    placeholder-text: "Search a title, an artist or an album...";
+                    visible: root.searching;
+                    width: root.searching ? 400px : 0px;
+                    animate width {
+                        duration: 250ms;
+                        easing: ease-in-out;
+                    }
+                    accepted(text) => search(text);
+                }
+                search-button:=IconButton {
+                    icon: root.searching ? "X" : Icons.Magnify;
+                    background: transparent;
+                    font-size: Theme.h4;
+                    accessible-role: button;
+                    accessible-label: "Search button";
+                    clicked => root.searching ?  hide_search_field(): show_search_field();
+                }
+
+            }
+        }
+
+        HorizontalLayout {
+            vertical-stretch: 1;
+
+            // Sidebar
+        sidebar := Rectangle {
+
+                width: 200px;
+                background: Theme.background-second;
+                VerticalLayout {
+                    alignment: start;
+                    padding-left: 5px;
+                    padding-top: 10px;
+                    Rectangle {
+                        width: 32px;
+                        height: 32px;
+                        background: transparent;
+                        IconButton {
+                            icon: Icons.Menu;
+                            font-size: 20pt;
+                        }
+                    }
+
+                    VerticalLayout {
+                        padding-left: -5px;
+                        padding-top: 10px;
+                        SidebarItem {
+                            icon: Icons.Home;
+                            label: "Accueil";
+                            active: current-page == 0;
+                            clicked => {
+                                current-page = 0;
+                            }
+                        }
+
+                        SidebarItem {
+                            icon: Icons.Library;
+                            label: "Bibliothèque";
+                            active: current-page == 1;
+                            clicked => {
+                                current-page = 1;
+                            }
+                        }
+
+                        SidebarItem {
+                            icon: Icons.Settings;
+                            label: "Paramètres";
+                            active: current-page == 2;
+                            clicked => {
+                                current-page = 2;
+                            }
+                        }
+                        SidebarItem {
+                            icon: Icons.Library;
+                            label: "Sources";
+                            active: current-page == 3;
+                            clicked => {
+                                current-page = 3;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Contenu
+        Rectangle {
+                background: Theme.background-first;
+            horizontal-stretch: 1;
+
+                if current-page == 0: HomePage { }
+                if current-page == 1: Rectangle {
+                    Text {
+                        text: "Page Bibliothèque";
+                        color: white;
+                    }
+                }
+                if current-page == 2: Rectangle {
+                    Text {
+                        text: "Page Paramètres";
+                        color: white;
+                    }
+                }
+                if current-page == 3: SourcePage {
+                    Sources: root.sources;
+                    addSource(url) => {
+                        root.add_source(url);
+                    }
+                }
+                }
+                search-panel := Rectangle {
+                    width: root.searching ? 450px : 0px;
+                    clip: true;
+                    background: Theme.background-second;
+                    animate width {
+                         duration: 250ms;
+                         easing: ease-in-out;
+                    }
+                    // Displays the search results
+                    ListView {
+                        width: 100%;
+                        height: 100%;
+                        for item in root.musics: Rectangle {
+                            width: 100%;
+                            height: 50px;
+                            background: Theme.background-second;
+                            HorizontalLayout {
+                                Rectangle {
+                                    height: 50px;
+                                    width: 50px;
+                                    background: red;
+                                    Image {
+                                        height: 100%;
+                                        width: 100%;
+                                        source: item.cover;
+                                        horizontal-stretch: 1;
+                                        accessible-label: "Cover of " + item.album + " album";
+                                    }
+                                }
+                                VerticalLayout {
+                                    Text {
+                                        text: item.title;
+                                        color: Theme.text-color;
+                                        horizontal-alignment: left;
+                                    }
+                                    Text {
+                                        text: item.artist + " - " + item.album;
+                                        color: Theme.text-color-disabled;
+                                    }
+                                }
+                            }
+                            TouchArea {
+                                height: 100%;
+                                width: 100%;
+                                clicked => play_music(item.url, item.artist, item.title, item.album, item.cover-url);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+}
