@@ -9,6 +9,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.head_ref }}
           repository: ${{ github.event.pull_request.head.repo.full_name }}
-      - run: cargo check
+          fetch-depth: 0  # This ensures all history is fetched
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Check code
+        run: cargo check
