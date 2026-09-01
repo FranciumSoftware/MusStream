@@ -29,3 +29,18 @@ csv = "1.4.0"
 
 [build-dependencies]
 slint-build = "1.17.0"
+
+
+[package.metadata.bundle]
+name = "MusStream"
+identifier = "con.franciumsoftware.musstream"
+icon = ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png"]
+version = "α0.2"
+resources = ["assets", "images/**/*.png", "secrets/public_key.txt"]
+copyright = "Copyright (c) Francium Software read the license."
+category = "Music"
+short_description = "A music streaming application."
+long_description = """
+MusStream is a music streaming application based on sources and fediverse philosophy.
+"""
+osx_url_schemes = ["com.franciumsoftware.musstream"]
