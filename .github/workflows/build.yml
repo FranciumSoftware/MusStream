@@ -57,17 +57,8 @@ jobs:
           libxcb-shape0-dev \
           libxcb-xfixes0-dev \
           libxkbcommon-dev \
-          libgtk-3-dev
-        # Print where pkg-config searches and verify fontconfig is found (helps debugging CI failures)
-        echo "PKG_CONFIG_PATH=$PKG_CONFIG_PATH"
-        pkg-config --cflags --libs fontconfig || {
-          echo "fontconfig NOT found via pkg-config; listing pkgconfig directories:";
-          ls -la /usr/lib/x86_64-linux-gnu/pkgconfig || true;
-          ls -la /usr/lib/pkgconfig || true;
-          echo "Setting PKG_CONFIG_PATH to include common locations and retrying";
-          export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:$PKG_CONFIG_PATH;
-          pkg-config --cflags --libs fontconfig || { echo "fontconfig still not found"; exit 1; }
-        }
+          libgtk-3-dev\
+          libasound2-dev
 
     - name: Install macOS dependencies
       if: matrix.os == 'macos-latest'
