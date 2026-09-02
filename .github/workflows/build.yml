@@ -49,7 +49,6 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update
-        # Ensure pkg-config and the fontconfig development files are available for build scripts
         sudo apt-get install -y \
           pkg-config \
           libfontconfig1-dev \
@@ -63,7 +62,6 @@ jobs:
     - name: Install macOS dependencies
       if: matrix.os == 'macos-latest'
       run: |
-        # Use Homebrew on macOS to provide fontconfig and pkg-config for build scripts
         brew update || true
         brew install pkg-config fontconfig || true
 
@@ -83,11 +81,33 @@ jobs:
         cargo install cargo-deb
         cargo deb --target ${{ matrix.target }}
 
+    - name: Upload Release Asset (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ${{ format('./target/{0}/release/{1}_*.deb', matrix.target, 'musstream') }}
+        asset_name: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}-${{ matrix.target }}.deb
+        asset_content_type: application/octet-stream
+
     - name: Package (macOS)
       if: matrix.os == 'macos-latest'
       run: |
         cargo install cargo-bundle
         cargo bundle --release --target ${{ matrix.target }}
+
+    - name: Upload Release Asset (macOS)
+      if: matrix.os == 'macos-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ github.event.release.upload_url }}
+        asset_path: ${{ format('./target/{0}/release/bundle/osx/MusStream.dmg', matrix.target) }}
+        asset_name: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}-${{ matrix.target }}.dmg
+        asset_content_type: application/octet-stream
 
     - name: Package (Windows)
       if: matrix.os == 'windows-latest'
@@ -95,12 +115,13 @@ jobs:
         cargo install cargo-wix
         cargo wix --no-build
 
-    - name: Upload Release Asset
+    - name: Upload Release Asset (Windows)
+      if: matrix.os == 'windows-latest'
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ github.event.release.upload_url }}
-        asset_path: ./target/${{ matrix.target }}/release/*.${{ matrix.package }}
-        asset_name: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}-${{ matrix.target }}.${{ matrix.package }}
+        asset_path: ${{ format('./target/{0}/release/bundle/msi/*.msi', matrix.target) }}
+        asset_name: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}-${{ matrix.target }}.msi
         asset_content_type: application/octet-stream
