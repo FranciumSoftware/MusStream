@@ -58,7 +58,7 @@ export component SidebarItem inherits Rectangle {
             Text {
                 text: label;
                 // Le texte s'illumine aussi si l'élément a le focus
-                color: (active || scope.has-focus) ? Theme.text-color : Theme.text-color-disabled;
+                color: Theme.text-color;
                 font-size: 20pt;
                 horizontal-alignment: left;
             }
