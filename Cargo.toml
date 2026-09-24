@@ -1,7 +1,12 @@
 [package]
 name = "MusStream"
-version = "0.1.0"
+version = "0.2.1"
 edition = "2024"
+
+package.metadata.wix.eula = false
+package.license = 'MIT'
+authors = ["Francium Software"]
+
 
 [dependencies]
 rodio = {
@@ -29,14 +34,14 @@ csv = "1.4.0"
 
 [build-dependencies]
 slint-build = "1.17.0"
+winres = "0.1.12"
 
 
 [package.metadata.bundle]
 name = "MusStream"
-identifier = "con.franciumsoftware.musstream"
+identifier = "com.franciumsoftware.musstream"
 icon = ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png"]
-version = "α0.2"
-resources = ["assets", "images/**/*.png", "secrets/public_key.txt"]
+version = "0.2.0"
 copyright = "Copyright (c) Francium Software read the license."
 category = "Music"
 short_description = "A music streaming application."

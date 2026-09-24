@@ -1,6 +1,10 @@
+extern crate winres;
 fn main() {
     slint_build::compile("ui/mainwindow.slint").unwrap();
 
-    #[cfg(target_os = "windows")]
-    println!(r"cargo:rustc-link-search=native=C:\Program Files\VideoLAN\VLC");
+    if cfg!(target_os = "windows") {
+        let mut res = winres::WindowsResource::new();
+        res.set_icon("icons/128x128@2x.ico");
+        res.compile().unwrap();
+    }
 }
